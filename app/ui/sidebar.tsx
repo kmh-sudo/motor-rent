@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Dashboard", icon: "D" },
-  { href: "/moter-management", label: "Moter Management", icon: "M" },
+  { href: "/motor-management", label: "Motor Management", icon: "M" },
 ];
 
 export function Sidebar() {
@@ -19,7 +19,7 @@ export function Sidebar() {
             MR
           </span>
           <span>
-            <span className="block text-base font-bold tracking-tight">Moter Rent</span>
+            <span className="block text-base font-bold tracking-tight">Motor Rent</span>
             <span className="block text-xs font-medium text-slate-400">Admin Dashboard</span>
           </span>
         </Link>
