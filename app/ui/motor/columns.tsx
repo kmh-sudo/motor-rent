@@ -46,21 +46,21 @@ export const columns: ColumnDef<Motor>[] = [
     accessorKey: "dailyRate",
     header: "Daily Price",
     cell: ({ getValue }) => (
-      <p className="text-sm font-black text-slate-950">${getValue<number>()}/day</p>
+      <p className="text-sm font-black text-slate-950  text-center">THB{getValue<number>()}/day</p>
     ),
   },
   {
     accessorKey: "weeklyRate",
     header: "Weekly Price",
     cell: ({ getValue }) => (
-      <p className="text-sm font-black text-slate-950">${getValue<number>()}/week</p>
+      <p className="text-sm font-black text-slate-950 text-center">THB{getValue<number>()}/week</p>
     ),
   },
   {
     accessorKey: "monthlyRate",
     header: "Monthly Price",
     cell: ({ getValue }) => (
-      <p className="text-sm font-black text-slate-950">${getValue<number>()}/month</p>
+      <p className="text-sm font-black text-slate-950 text-center">THB{getValue<number>()}/month</p>
     ),
   },
   {
