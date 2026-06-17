@@ -9,24 +9,25 @@ import type { Motor } from "@/app/lib/definitions";
 import { columns } from "./columns";
 
 type MotorTableProps = {
-  data: Motor[];
+  data?: Motor[];
 };
 
-export function MotorTable({ data }: MotorTableProps) {
+export function MotorTable({ data = []}: MotorTableProps) {
   // eslint-disable-next-line react-hooks/incompatible-library -- TanStack Table is the table state manager for this component.
   const table = useReactTable({ 
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
-  console.log(data);
+  console.log(table,"table data");
+  console.log(table.getRowModel(), "table.getRowModel()");
 
   return (
     <div className="mt-6 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
       {table.getHeaderGroups().map((headerGroup) => (
         <div
           key={headerGroup.id}
-          className="hidden grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr_0.7fr_0.6fr] bg-slate-50 px-5 py-4 text-xs font-black uppercase tracking-wide text-slate-500 lg:grid"
+          className="hidden grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr_0.7fr_0.6fr_0.7fr_0.6fr] bg-slate-50 px-5 py-4 text-xs font-black uppercase tracking-wide text-slate-500 lg:grid"
         >
           {headerGroup.headers.map((header) => (
             <div key={header.id}>
@@ -42,7 +43,7 @@ export function MotorTable({ data }: MotorTableProps) {
         table.getRowModel().rows.map((row) => (
           <div
             key={row.id}
-            className="grid gap-4 border-t border-slate-100 px-5 py-5 transition-colors first:border-t-0 hover:bg-slate-50 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr_0.7fr_0.6fr] lg:items-center"
+            className="grid gap-4 border-t border-slate-100 px-5 py-5 transition-colors first:border-t-0 hover:bg-slate-50 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr_0.7fr_0.6fr_0.7fr_0.6fr] lg:items-center"
           >
             {row.getVisibleCells().map((cell) => (
               <div key={cell.id}>

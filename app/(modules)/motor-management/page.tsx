@@ -70,6 +70,15 @@ const moters: Motor[] = [
 export default function MoterManagementPage() {
  const { data: motors, isLoading, error } = useMotors();
  console.log(motors, isLoading, error, "bikes");
+ if (isLoading) {
+  return <div>Loading...</div>;
+}
+
+if (error) {
+  return <div>Error loading motors</div>;
+}
+
+
   return (
     <div className="mx-auto max-w-7xl space-y-8">
       <section className="rounded-[2rem] border border-white/70 bg-white/85 p-6 shadow-2xl shadow-slate-200/70 backdrop-blur sm:p-8">
@@ -116,7 +125,7 @@ export default function MoterManagementPage() {
           </select>
         </div>
 
-        <MotorTable data={moters} />
+        <MotorTable data={motors} />
       </section>
     </div>
   );
