@@ -46,21 +46,21 @@ export const columns: ColumnDef<Motor>[] = [
     accessorKey: "dailyRate",
     header: "Daily Price",
     cell: ({ getValue }) => (
-      <p className="text-sm font-black text-slate-950  text-center">THB{getValue<number>()}/day</p>
+      <p className="text-sm font-black text-slate-950  text-center">THB{getValue<number>()}</p>
     ),
   },
   {
     accessorKey: "weeklyRate",
     header: "Weekly Price",
     cell: ({ getValue }) => (
-      <p className="text-sm font-black text-slate-950 text-center">THB{getValue<number>()}/week</p>
+      <p className="text-sm font-black text-slate-950 text-center">THB{getValue<number>()}</p>
     ),
   },
   {
     accessorKey: "monthlyRate",
     header: "Monthly Price",
     cell: ({ getValue }) => (
-      <p className="text-sm font-black text-slate-950 text-center">THB{getValue<number>()}/month</p>
+      <p className="text-sm font-black text-slate-950 text-center">THB{getValue<number>()}</p>
     ),
   },
   {
@@ -71,7 +71,7 @@ export const columns: ColumnDef<Motor>[] = [
 
       return (
         <span
-          className={`inline-flex rounded-full px-3 py-1 text-xs font-black ring-1 ${statusStyles[status] ?? statusStyles.inactive}`}
+          className={`inline-flex rounded-full px-2 py-1 text-xs font-black ring-1 ${statusStyles[status] ?? statusStyles.inactive}`}
         >
           {formatStatus(status)}
         </span>

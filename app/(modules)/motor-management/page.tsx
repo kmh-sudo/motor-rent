@@ -1,4 +1,5 @@
 'use client';
+
 import Link from "next/link";
 import {  MotorTable } from "@/app/ui/motor/motor-table";
 import type { Motor } from "@/app/lib/definitions";
@@ -67,7 +68,7 @@ const moters: Motor[] = [
   },
 ];
 
-export default function MoterManagementPage() {
+export default function MotorManagementPage() {
  const { data: motors, isLoading, error } = useMotors();
  console.log(motors, isLoading, error, "bikes");
  if (isLoading) {
@@ -78,7 +79,6 @@ if (error) {
   return <div>Error loading motors</div>;
 }
 
-
   return (
     <div className="mx-auto max-w-7xl space-y-8">
       <section className="rounded-[2rem] border border-white/70 bg-white/85 p-6 shadow-2xl shadow-slate-200/70 backdrop-blur sm:p-8">
@@ -88,10 +88,10 @@ if (error) {
               Fleet operations
             </span>
             <h1 className="mt-5 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
-              Moter Management
+              Motor Management
             </h1>
             <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
-              Track moter availability, pricing, service status, and rental readiness in one premium workspace.
+              Track motor availability, pricing, service status, and rental readiness in one premium workspace.
             </p>
           </div>
           <Link href="/motor-management/create">
